@@ -9,7 +9,7 @@ app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
-const myServer = app.listen(5000);
+const myServer = app.listen(3000);
 
 getUniqueID = function () {
   function s4() {
