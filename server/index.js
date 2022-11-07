@@ -11,7 +11,9 @@ app.get("/*", function (req, res) {
 
 const PORT = process.env.PORT || 3000;
 
-const myServer = app.listen(PORT);
+const myServer = app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}...`);
+});
 
 getUniqueID = function () {
   function s4() {
