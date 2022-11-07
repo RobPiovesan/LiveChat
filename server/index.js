@@ -9,7 +9,9 @@ app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
-const myServer = app.listen(3000);
+const PORT = process.env.PORT || 3000;
+
+const myServer = app.listen(PORT);
 
 getUniqueID = function () {
   function s4() {
