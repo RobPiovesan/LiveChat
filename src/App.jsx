@@ -1,6 +1,6 @@
-import "./App.css";
 import { useEffect, useState } from "react";
 import ChatContainer from "./components/ChatContainer/ChatContainer";
+import { AppFlexBody, AppMain } from "./App.styles";
 
 const { protocol, host, pathname } = window.location;
 let ws_uri;
@@ -38,34 +38,16 @@ function App() {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        justifyItems: "center",
-        height: "100vh",
-      }}
-    >
-      <div
-        className="App"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          backgroundColor: "white",
-          borderRadius: "15px",
-        }}
-      >
-        <div style={{ maxWidth: "500px", width: "100vw", height: "100vh" }}>
-          <ChatContainer
-            messages={messages}
-            sendMsg={sendMsg}
-            userId={userId}
-            userCount={userCount}
-          />
-        </div>
-      </div>
-    </div>
+    <AppFlexBody>
+      <AppMain>
+        <ChatContainer
+          messages={messages}
+          sendMsg={sendMsg}
+          userId={userId}
+          userCount={userCount}
+        />
+      </AppMain>
+    </AppFlexBody>
   );
 }
 
