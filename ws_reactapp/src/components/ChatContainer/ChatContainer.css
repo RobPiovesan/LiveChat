@@ -1,0 +1,4 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.messagesconatiner::-webkit-scrollbar {
+  display: none;
+}
