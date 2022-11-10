@@ -30,21 +30,21 @@ export default function ChatContainer({
           messages
             .slice(0)
             .reverse()
-            .map(({ id, msg }) => {
+            .map(({ id, text, username }) => {
               if (id === userId) {
                 return (
                   <UserMessageContainer>
-                    <UserChatBubble>{msg}</UserChatBubble>
-                    <UserIcon id={id} />
+                    <UserChatBubble>{text}</UserChatBubble>
+                    <UserIcon id={id} name={username} />
                   </UserMessageContainer>
                 );
               } else if (id === "SERVER") {
-                return <ServerUpdate>{msg}</ServerUpdate>;
+                return <ServerUpdate>{text}</ServerUpdate>;
               } else {
                 return (
                   <ServerMessageContainer>
-                    <UserIcon id={id} />
-                    <ServerChatBubble>{msg}</ServerChatBubble>
+                    <UserIcon id={id} name={username} />
+                    <ServerChatBubble>{text}</ServerChatBubble>
                   </ServerMessageContainer>
                 );
               }
